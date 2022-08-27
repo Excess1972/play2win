@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -7,15 +8,14 @@ public class Gamemanager : MonoBehaviour
 {
 	public static Gamemanager Instance;
 
-	public GameData         gameData;
-	public TextMeshProUGUI  goldText;
-	public List<GameObject> enemies = new List<GameObject>();
-	public List<GameObject> active_enemies = new List<GameObject>();
-	public GameObject       enemyPrefab;
-	public GameObject       _base;
-	private int				_highscore;
-	public List<Vector3>    towersPositions;
-
+	public  GameData         gameData;
+	public  TextMeshProUGUI  goldText;
+	public  List<GameObject> enemies        = new List<GameObject>();
+	public  List<GameObject> active_enemies = new List<GameObject>();
+	public  GameObject       enemyPrefab;
+	public  GameObject       _base;
+	private int              _highscore;
+	public  List<Vector3>    towersPositions;
 
 	void Awake()
 	{
@@ -78,12 +78,12 @@ public class Gamemanager : MonoBehaviour
 	}
 
 	public void AddHighscore()
-    {
+	{
 		_highscore += 1;
-    }
+	}
 
 	public int GetHighscore()
-    {
+	{
 		return _highscore;
-    }
+	}
 }

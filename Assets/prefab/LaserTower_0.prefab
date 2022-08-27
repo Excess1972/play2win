@@ -24344,7 +24344,7 @@ GameObject:
   - component: {fileID: 9077457737553350729}
   - component: {fileID: 1872041537970231084}
   m_Layer: 8
-  m_Name: LaserTower_TURRET_L01
+  m_Name: tower_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
