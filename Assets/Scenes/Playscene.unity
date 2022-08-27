@@ -426,7 +426,6 @@ GameObject:
   m_Component:
   - component: {fileID: 112633702}
   - component: {fileID: 112633704}
-  - component: {fileID: 112633703}
   m_Layer: 0
   m_Name: MiniMapCam
   m_TagString: Untagged
@@ -449,14 +448,6 @@ Transform:
   m_Father: {fileID: 1108843978}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!81 &112633703
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112633701}
-  m_Enabled: 1
 --- !u!20 &112633704
 Camera:
   m_ObjectHideFlags: 0
@@ -1420,7 +1411,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.9
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3094,6 +3085,7 @@ MonoBehaviour:
   gameData: {fileID: 11400000, guid: e00258edb5bd4224b8cdc5b64b7f851c, type: 2}
   goldText: {fileID: 1948219383}
   enemies: []
+  active_enemies: []
   enemyPrefab: {fileID: 8838977880084765536, guid: e0c08a53982b2d44b8c993ac4c0b26de, type: 3}
   _base: {fileID: 722192345}
   towersPositions: []
@@ -3530,6 +3522,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1108843978}
     m_Modifications:
+    - target: {fileID: 237206186921965081, guid: 7d6ca85abc6917b4185d19d48eae0c5c, type: 3}
+      propertyPath: m_text
+      value: Successfully completed 9000
+      objectReference: {fileID: 0}
     - target: {fileID: 7590713078556285401, guid: 7d6ca85abc6917b4185d19d48eae0c5c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0

@@ -41,6 +41,7 @@ public class enemy_logic : MonoBehaviour
 	{
 		// TODO : animation triggern 
 		gameObject.SetActive(false);
+		Gamemanager.Instance.active_enemies.Remove(gameObject);
 	}
 
 	// Triggered when enemy reaches base 
