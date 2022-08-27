@@ -20,7 +20,8 @@ public class Gamemanager : MonoBehaviour
 	void Awake()
 	{
 		Instance = this;
-
+		gameData.BaseHealth = 100;
+		gameData.gold = 10000;
 		// _base = GameObject.Find("HeadQuarter");
 		// should come from savedgame
 		_highscore = 0;

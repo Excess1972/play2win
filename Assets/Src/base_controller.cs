@@ -10,8 +10,8 @@ public class base_controller : MonoBehaviour
 
 	private void OnEnable()
 	{
-		gameData.BaseHealth = 100;
-		gameData.gold = 10000;
+		//gameData.BaseHealth = 100;
+		//gameData.gold = 10000;
 		_healthBar = GetComponentInChildren<RectTransform>();
 		_healthBar.sizeDelta = new Vector2(gameData.BaseHealth, 30);
 	}
