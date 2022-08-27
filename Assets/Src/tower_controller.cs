@@ -34,7 +34,7 @@ public class tower_controller : MonoBehaviour
 				_shootingcooldown = Time.time + _attackspeed;
 				if (_currenttarget.GetComponent<enemy_logic>().Hit(25))
 				{
-					InvalidateTarget(_currenttarget, true);
+					//InvalidateTarget(_currenttarget, true);
 					Gamemanager.Instance.addGold(20);
 				}
 			}
@@ -85,19 +85,17 @@ public class tower_controller : MonoBehaviour
 	{
 		InvalidateTarget(other.gameObject);
 	}
+	public void test()
+    {
 
-	private void InvalidateTarget(GameObject validationtarget, bool kill = false)
+    }
+	public void InvalidateTarget(GameObject validationtarget)
 	{
 		enemies_in_range.Remove(validationtarget);
 
 		if (_currenttarget == validationtarget)
 		{
 			_currenttarget = null;
-		}
-
-		if (kill)
-		{
-			validationtarget.SetActive(false);
 		}
 	}
 

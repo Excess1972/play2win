@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameEvent : MonoBehaviour
+[CreateAssetMenu(fileName = "Neues GameEvent", menuName = "Game Event", order = 0)]
+public class GameEvent : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    private readonly List<GameEventListener> _events = new List<GameEventListener>();
+
+    public void Raise(GameObject enemy)
     {
-        
+        for (int i = _events.Count -1; i >= 0; i--)
+        {
+            _events[i].OnEventRaised(enemy);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RegisterListener(GameEventListener listener)
     {
-        
+        _events.Add(listener);
+    }
+
+    public void UnregisterListener(GameEventListener listener)
+    {
+        _events.Remove(listener);
     }
 }

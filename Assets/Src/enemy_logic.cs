@@ -3,12 +3,12 @@ using UnityEngine.AI;
 
 public class enemy_logic : MonoBehaviour
 {
-	public  Animator      _animator;
-	private NavMeshAgent  _agent;
-	private int           _energy;
-	private RectTransform _eneryBar;
-	private GameData      gameData;
-
+	public  Animator		_animator;
+	private NavMeshAgent	_agent;
+	private int				_energy;
+	private RectTransform	_eneryBar;
+	private GameData		gameData;
+	public GameEvent		EnemyDied;
 	void Awake()
 	{
 		_agent = GetComponent<NavMeshAgent>();
@@ -39,8 +39,10 @@ public class enemy_logic : MonoBehaviour
 
 	private void Die()
 	{
-		// TODO : animation triggern 
+		// TODO : animation triggern
+		EnemyDied.Raise(this.gameObject); 
 		gameObject.SetActive(false);
+		
 		Gamemanager.Instance.active_enemies.Remove(gameObject);
 		if(Gamemanager.Instance.active_enemies.Count == 0)
         {
