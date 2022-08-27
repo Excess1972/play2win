@@ -44,6 +44,9 @@ public class cam_controller : MonoBehaviour
 		// right
 		if (Input.GetKey("d"))
 			pos.x += _speed * Time.deltaTime;
+		
+		pos.x = Mathf.Clamp(pos.x, -40, 40);
+		pos.z = Mathf.Clamp(pos.z, -60, 10);
 
 		transform.position = pos;
 	}
