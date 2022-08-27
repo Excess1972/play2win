@@ -7,8 +7,8 @@ public class wave_spawner : MonoBehaviour
     private float _wave;
     void Start()
     {
-        _wave = 0;
-        SpawnEnemyWave(5);
+        _wave = 1;
+        //SpawnEnemyWave(5);
     }
 
     void Update()
@@ -28,10 +28,16 @@ public class wave_spawner : MonoBehaviour
 
         if (Gamemanager.Instance.active_enemies.Count == 0)
         {
-            print("waves: " +Mathf.Ceil(_wave*5f));
+            print("current wave: " + _wave + "spawning mobs: " + Mathf.Ceil(_wave * 5f));
+            
+            if(_wave == 2)
+            {
+                Gamemanager.Instance.gameData.EnemyStartHealth = 200;
+                print("hat geklappt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
+            }
+
             SpawnEnemyWave(Mathf.Ceil(_wave*5f));
             _wave++;
-            Gamemanager.Instance.AddHighscore();
         }
     }
 

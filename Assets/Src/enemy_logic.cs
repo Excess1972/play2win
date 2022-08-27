@@ -19,7 +19,7 @@ public class enemy_logic : MonoBehaviour
 	{
 		_energy = gameData.EnemyStartHealth;
 		_eneryBar = GetComponentInChildren<RectTransform>();
-		_eneryBar.sizeDelta = new Vector2(100, 30);
+		_eneryBar.sizeDelta = new Vector2(_energy, 30);
 		_animator.SetBool("Run Forward", true);
 	}
 
@@ -42,6 +42,11 @@ public class enemy_logic : MonoBehaviour
 		// TODO : animation triggern 
 		gameObject.SetActive(false);
 		Gamemanager.Instance.active_enemies.Remove(gameObject);
+		if(Gamemanager.Instance.active_enemies.Count == 0)
+        {
+			Gamemanager.Instance.AddHighscore();
+			print("completed waves:" + Gamemanager.Instance.GetHighscore());
+        }
 	}
 
 	// Triggered when enemy reaches base 
