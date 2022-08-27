@@ -21,6 +21,7 @@ public class Gamemanager : MonoBehaviour
 	{
 		Instance = this;
 		gameData.BaseHealth = 100;
+		gameData.EnemyStartHealth = 100;
 		gameData.gold = 10000;
 		// _base = GameObject.Find("HeadQuarter");
 		// should come from savedgame

@@ -24343,6 +24343,7 @@ GameObject:
   - component: {fileID: 1333985106325740715}
   - component: {fileID: 9077457737553350729}
   - component: {fileID: 1872041537970231084}
+  - component: {fileID: 6069360754756668328}
   m_Layer: 8
   m_Name: LaserTower_TURRET_L01
   m_TagString: Untagged
@@ -24449,6 +24450,34 @@ CapsuleCollider:
   m_Height: 28
   m_Direction: 1
   m_Center: {x: 0.01542975, y: 1, z: 0.17725223}
+--- !u!114 &6069360754756668328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356656810269021533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d8a4af840e8c243bc38734df57a64c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: c7fde5f347863444d9740659f65c5731, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9077457737553350729}
+        m_TargetAssemblyTypeName: tower_controller, Assembly-CSharp
+        m_MethodName: InvalidateTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1356726454201369281
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameEventListener : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [System.Serializable]
+    public class LevelChangeEvent : UnityEvent<GameObject> { }
+
+    public GameEvent Event;
+    public LevelChangeEvent Response;
+
+    public void OnEnable()
     {
-        
+        Event.RegisterListener(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnDisable()
     {
-        
+        Event.UnregisterListener(this);
+    }
+
+    public void OnEventRaised(GameObject enemy)
+    {
+        Response.Invoke(enemy.gameObject);
     }
 }
