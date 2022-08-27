@@ -10,9 +10,10 @@ public class Gamemanager : MonoBehaviour
 	public GameData         gameData;
 	public TextMeshProUGUI  goldText;
 	public List<GameObject> enemies = new List<GameObject>();
+	public List<GameObject> active_enemies = new List<GameObject>();
 	public GameObject       enemyPrefab;
 	public GameObject       _base;
-	private int				      _highscore;
+	private int				_highscore;
 	public List<Vector3>    towersPositions;
 
 
@@ -75,7 +76,7 @@ public class Gamemanager : MonoBehaviour
 		}
 	}
 
-	public void SetHighscore()
+	public void AddHighscore()
     {
 		_highscore += 1;
     }
