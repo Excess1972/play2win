@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 8008593431563496375}
   - component: {fileID: 5242412078426136445}
   - component: {fileID: 6507733827408816799}
-  - component: {fileID: 7213859638160197371}
+  - component: {fileID: 5312085559535223992}
   m_Layer: 0
   m_Name: HeadQuarter
   m_TagString: Untagged
@@ -211,9 +211,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: e00258edb5bd4224b8cdc5b64b7f851c, type: 2}
   highscoreText: {fileID: 0}
+  baseHPText: {fileID: 0}
   EndScreen: {fileID: 0}
---- !u!135 &7213859638160197371
-SphereCollider:
+--- !u!65 &5312085559535223992
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -223,5 +224,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 11.45
-  m_Center: {x: 0.06632763, y: 6.842423, z: -2.0176148}
+  m_Size: {x: 11.3, y: 13.684852, z: 16.5}
+  m_Center: {x: 0.06632763, y: 6.842423, z: -1.5}

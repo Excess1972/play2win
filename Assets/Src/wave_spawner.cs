@@ -42,6 +42,7 @@ public class wave_spawner : MonoBehaviour
             if (_wave == 10)
             {
                 Gamemanager.Instance.gameData.EnemyStartHealth = 225;
+                Gamemanager.Instance.gameData.GoldEarned = 7;
                 Gamemanager.Instance.gameData.EnemyDmg = 12;
                 print("wave 10, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
             }
