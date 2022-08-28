@@ -9,6 +9,7 @@ public class enemy_logic : MonoBehaviour
 	private RectTransform	_eneryBar;
 	private GameData		gameData;
 	public GameEvent		EnemyDied;
+
 	void Awake()
 	{
 		_agent = GetComponent<NavMeshAgent>();
@@ -42,7 +43,7 @@ public class enemy_logic : MonoBehaviour
 		// TODO : animation triggern
 		EnemyDied.Raise(this.gameObject); 
 		gameObject.SetActive(false);
-		
+
 		Gamemanager.Instance.active_enemies.Remove(gameObject);
 		if(Gamemanager.Instance.active_enemies.Count == 0)
         {
@@ -56,7 +57,7 @@ public class enemy_logic : MonoBehaviour
 	{
 		if (other.gameObject == Gamemanager.Instance._base)
 		{
-			other.gameObject.GetComponent<base_controller>().DamageRecieved(25);
+			other.gameObject.GetComponent<base_controller>().DamageRecieved(gameData.EnemyDmg);
 			Die();
 		}
 	}

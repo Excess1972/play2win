@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold: 300
   BaseHealth: 100
-  EnemyStartHealth: 100
+  EnemyStartHealth: 150
+  EnemyDmg: 0
+  TowerDmg: 25
+  GoldEarned: 15
