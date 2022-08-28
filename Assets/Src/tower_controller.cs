@@ -12,7 +12,6 @@ public class tower_controller : MonoBehaviour
 	public  ParticleSystem shootinganimation;
 	public  AudioSource    audiosource;
 	public  AudioClip      audioclip;
-	public TextMeshProUGUI remainingEnemiesText;
 
 	void FixedUpdate()
 	{
@@ -91,7 +90,6 @@ public class tower_controller : MonoBehaviour
 	public void InvalidateTarget(GameObject validationtarget)
 	{
 		enemies_in_range.Remove(validationtarget);
-		remainingEnemiesText.text = "Remaining Enemies: " + Gamemanager.Instance.enemies.Count.ToString();
 		if (_currenttarget == validationtarget)
 		{
 			_currenttarget = null;
