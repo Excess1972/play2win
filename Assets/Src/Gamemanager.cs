@@ -26,7 +26,7 @@ public class Gamemanager : MonoBehaviour
 		gameData.gold = 300;
 		gameData.EnemyDmg = 5;
 		gameData.TowerDmg = 25;
-		gameData.GoldEarned = 7;
+		gameData.GoldEarned = 5;
 		_highscore = 0;
 		initEnemyList(500);
 		updateGoldText();
@@ -34,14 +34,18 @@ public class Gamemanager : MonoBehaviour
 		towersPositions = new List<Vector3>();
 	}
 
-	public int getGold()
+    public void Update()
+    {
+		remainingEnemiesText.text = "Remaining Enemies: " + Gamemanager.Instance.active_enemies.Count.ToString();
+	}
+
+    public int getGold()
 	{
 		return gameData.gold;
 	}
 
 	public void addGold(int amount)
 	{
-		remainingEnemiesText.text = "Remaining Enemies: " + Gamemanager.Instance.active_enemies.Count.ToString();
 		gameData.gold += amount;
 		updateGoldText();
 		updateBottonStates();
