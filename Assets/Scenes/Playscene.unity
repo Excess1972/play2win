@@ -2259,7 +2259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f25e11544fabe43af46680d732b463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _size: 30
+  _size: 20
 --- !u!4 &387678694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 468360, guid: f19658f215550b6499a085fa969998c2, type: 3}
@@ -3396,7 +3396,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.9782076, b: 0.9025157, a: 1}
-  m_Intensity: 0.9
+  m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4752,7 +4752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f25e11544fabe43af46680d732b463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _size: 30
+  _size: 20
 --- !u!4 &967892832
 Transform:
   m_ObjectHideFlags: 0
@@ -4761,7 +4761,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967892830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -46.9, y: -1.2700236, z: -42.7}
+  m_LocalPosition: {x: -45.1, y: -1.2700236, z: -39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4874,7 +4874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f25e11544fabe43af46680d732b463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _size: 30
+  _size: 20
 --- !u!4 &1020343228
 Transform:
   m_ObjectHideFlags: 0
@@ -4883,7 +4883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020343226}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -34.5, y: -0.7700236, z: 38}
+  m_LocalPosition: {x: -41.8, y: -0.7700236, z: 42.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5516,7 +5516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238676016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 81.4, y: -0.020023584, z: -3.9}
+  m_LocalPosition: {x: 79, y: -0.020023584, z: -8.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5535,7 +5535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f25e11544fabe43af46680d732b463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _size: 30
+  _size: 20
 --- !u!4 &1243653774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 468360, guid: f19658f215550b6499a085fa969998c2, type: 3}
@@ -6591,7 +6591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f25e11544fabe43af46680d732b463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _size: 30
+  _size: 20
 --- !u!1 &1537029495
 GameObject:
   m_ObjectHideFlags: 0
@@ -6811,7 +6811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f25e11544fabe43af46680d732b463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _size: 30
+  _size: 20
 --- !u!1001 &1631381470
 PrefabInstance:
   m_ObjectHideFlags: 0
