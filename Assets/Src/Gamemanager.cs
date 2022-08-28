@@ -24,9 +24,9 @@ public class Gamemanager : MonoBehaviour
 		gameData.BaseHealth = 100;
 		gameData.EnemyStartHealth = 125;
 		gameData.gold = 300;
-		gameData.EnemyDmg = 5;
+		gameData.EnemyDmg = 8;
 		gameData.TowerDmg = 25;
-		gameData.GoldEarned = 5;
+		gameData.GoldEarned = 4;
 		_highscore = 0;
 		initEnemyList(500);
 		updateGoldText();

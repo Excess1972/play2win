@@ -35,22 +35,27 @@ public class wave_spawner : MonoBehaviour
             
             if(_wave == 5)
             {
-                Gamemanager.Instance.gameData.EnemyStartHealth = 175;
-                Gamemanager.Instance.gameData.EnemyDmg = 10;
+                Gamemanager.Instance.gameData.EnemyStartHealth = 200;
+                Gamemanager.Instance.gameData.EnemyDmg = 12;
                 print("wave 5, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
             }
             if (_wave == 10)
             {
-                Gamemanager.Instance.gameData.EnemyStartHealth = 225;
-                Gamemanager.Instance.gameData.GoldEarned = 7;
-                Gamemanager.Instance.gameData.EnemyDmg = 12;
+                Gamemanager.Instance.gameData.EnemyStartHealth = 250;
+                Gamemanager.Instance.gameData.EnemyDmg = 15;
                 print("wave 10, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
+            }
+            if (_wave == 15)
+            {
+                Gamemanager.Instance.gameData.EnemyStartHealth = 300;
+                Gamemanager.Instance.gameData.EnemyDmg = 19;
+                print("wave 15, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
             }
             if (_wave == 20)
             {
-                Gamemanager.Instance.gameData.EnemyStartHealth = 300;
-                Gamemanager.Instance.gameData.GoldEarned = 20;
-                Gamemanager.Instance.gameData.EnemyDmg = 15;
+                Gamemanager.Instance.gameData.EnemyStartHealth = 400;
+                Gamemanager.Instance.gameData.GoldEarned = 8;
+                Gamemanager.Instance.gameData.EnemyDmg = 25;
                 print("wave 20, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
             }
 
