@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class wave_spawner : MonoBehaviour
 {
     public Transform[] spawns;
     private float _wave;
+    public TextMeshProUGUI currentWaveText;
+
     void Start()
     {
         _wave = 1;
@@ -13,14 +16,14 @@ public class wave_spawner : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) 
-        {
-            SpawnEnemyWave(10);
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SpawnEnemyWave(1);
-        }
+        //if (Input.GetKeyDown(KeyCode.Q)) 
+        //{
+        //    SpawnEnemyWave(10);
+        //}
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    SpawnEnemyWave(1);
+        //}
 
         // if liste mit aktiven mobs leer
         // -> spawn mit wave x einen wert zum bestimmen wie viele mobs bei der wave spawnwn nur grade werte
@@ -28,15 +31,30 @@ public class wave_spawner : MonoBehaviour
 
         if (Gamemanager.Instance.active_enemies.Count == 0)
         {
-            print("current wave: " + _wave + "spawning mobs: " + Mathf.Ceil(_wave * 5f));
+            print("current wave: " + _wave + "spawning mobs: " + Mathf.Ceil(5f + Mathf.Pow(1.19f, _wave)));
             
-            if(_wave == 2)
+            if(_wave == 5)
             {
-                Gamemanager.Instance.gameData.EnemyStartHealth = 200;
-                print("hat geklappt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
+                Gamemanager.Instance.gameData.EnemyStartHealth = 175;
+                Gamemanager.Instance.gameData.EnemyDmg = 10;
+                print("wave 5, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
+            }
+            if (_wave == 10)
+            {
+                Gamemanager.Instance.gameData.EnemyStartHealth = 225;
+                Gamemanager.Instance.gameData.EnemyDmg = 12;
+                print("wave 10, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
+            }
+            if (_wave == 20)
+            {
+                Gamemanager.Instance.gameData.EnemyStartHealth = 300;
+                Gamemanager.Instance.gameData.GoldEarned = 20;
+                Gamemanager.Instance.gameData.EnemyDmg = 15;
+                print("wave 20, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
             }
 
-            SpawnEnemyWave(Mathf.Ceil(_wave*5f));
+            SpawnEnemyWave(Mathf.Ceil(5f + Mathf.Pow(1.19f, _wave)));
+            currentWaveText.text = "Current Wave: " + _wave.ToString();
             _wave++;
         }
     }

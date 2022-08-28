@@ -32,6 +32,8 @@ public class pause_menu_controller : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene("Playscene");
+
+        Time.timeScale = 1;
     }
 
     public void ExitGame()

@@ -6,12 +6,11 @@ public class base_controller : MonoBehaviour
 	public  GameData		gameData;
 	private RectTransform	_healthBar;
 	public TextMeshProUGUI	highscoreText;
+	public TextMeshProUGUI	baseHPText;
 	public GameObject		EndScreen;
 
 	private void OnEnable()
 	{
-		//gameData.BaseHealth = 100;
-		//gameData.gold = 10000;
 		_healthBar = GetComponentInChildren<RectTransform>();
 		_healthBar.sizeDelta = new Vector2(gameData.BaseHealth, 30);
 	}
@@ -19,6 +18,7 @@ public class base_controller : MonoBehaviour
 	public void DamageRecieved(int dmg)
 	{
 		gameData.BaseHealth -= dmg;
+		baseHPText.text = "Life Points: " + gameData.BaseHealth.ToString();
 
 		if (gameData.BaseHealth <= 0)
 		{
@@ -33,7 +33,8 @@ public class base_controller : MonoBehaviour
 		// TODO : animation triggern 
 		// TODO : trigger menu screen
 		gameObject.SetActive(false);
-		highscoreText.text = Gamemanager.Instance.GetHighscore().ToString();
+		highscoreText.text = "Successfully completed waves: " + Gamemanager.Instance.GetHighscore().ToString();
+		Time.timeScale = 0;
 		EndScreen.SetActive(true);
 	}
 }

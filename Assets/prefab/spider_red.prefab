@@ -909,7 +909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 8935071326036783206}
-  BaseHit: {fileID: 11400000, guid: c7fde5f347863444d9740659f65c5731, type: 2}
+  EnemyDied: {fileID: 11400000, guid: c7fde5f347863444d9740659f65c5731, type: 2}
+  remainingEnemiesText: {fileID: 0}
 --- !u!54 &2562191898780072734
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -947,7 +948,7 @@ NavMeshAgent:
   m_Height: 2.5
   m_BaseOffset: 0.1
   m_WalkableMask: 1
-  m_ObstacleAvoidanceType: 1
+  m_ObstacleAvoidanceType: 2
 --- !u!135 &5331699293449568925
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class tower_controller : MonoBehaviour
 {
@@ -7,10 +8,11 @@ public class tower_controller : MonoBehaviour
 
 	GameObject             _currenttarget;
 	private float          _shootingcooldown;
-	public  float          _attackspeed = 0.2f;
+	public  float          _attackspeed = 0.35f;
 	public  ParticleSystem shootinganimation;
 	public  AudioSource    audiosource;
 	public  AudioClip      audioclip;
+	public TextMeshProUGUI remainingEnemiesText;
 
 	void FixedUpdate()
 	{
@@ -32,10 +34,10 @@ public class tower_controller : MonoBehaviour
 				shootinganimation.Play();
 				audiosource.PlayOneShot(audioclip);
 				_shootingcooldown = Time.time + _attackspeed;
-				if (_currenttarget.GetComponent<enemy_logic>().Hit(25))
+				if (_currenttarget.GetComponent<enemy_logic>().Hit(Gamemanager.Instance.gameData.TowerDmg))
 				{
 					//InvalidateTarget(_currenttarget, true);
-					Gamemanager.Instance.addGold(20);
+					Gamemanager.Instance.addGold(Gamemanager.Instance.gameData.GoldEarned);
 				}
 			}
 		}
@@ -85,14 +87,11 @@ public class tower_controller : MonoBehaviour
 	{
 		InvalidateTarget(other.gameObject);
 	}
-	public void test()
-    {
 
-    }
 	public void InvalidateTarget(GameObject validationtarget)
 	{
 		enemies_in_range.Remove(validationtarget);
-
+		remainingEnemiesText.text = "Remaining Enemies: " + Gamemanager.Instance.enemies.Count.ToString();
 		if (_currenttarget == validationtarget)
 		{
 			_currenttarget = null;

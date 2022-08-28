@@ -21,10 +21,11 @@ public class Gamemanager : MonoBehaviour
 	{
 		Instance = this;
 		gameData.BaseHealth = 100;
-		gameData.EnemyStartHealth = 100;
-		gameData.gold = 10000;
-		// _base = GameObject.Find("HeadQuarter");
-		// should come from savedgame
+		gameData.EnemyStartHealth = 125;
+		gameData.gold = 300;
+		gameData.EnemyDmg = 5;
+		gameData.TowerDmg = 25;
+		gameData.GoldEarned = 7;
 		_highscore = 0;
 		initEnemyList(500);
 		updateGoldText();
@@ -59,7 +60,7 @@ public class Gamemanager : MonoBehaviour
 
 	private void updateGoldText()
 	{
-		goldText.text = "gold : " + gameData.gold;
+		goldText.text = "Gold: " + gameData.gold;
 	}
 
 	private void updateBottonStates()
