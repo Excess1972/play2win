@@ -8,14 +8,15 @@ public class Gamemanager : MonoBehaviour
 {
 	public static Gamemanager Instance;
 
-	public  GameData         gameData;
-	public  TextMeshProUGUI  goldText;
-	public  List<GameObject> enemies        = new List<GameObject>();
-	public  List<GameObject> active_enemies = new List<GameObject>();
-	public  GameObject       enemyPrefab;
-	public  GameObject       _base;
-	private int              _highscore;
-	public  List<Vector3>    towersPositions;
+	public  GameData			gameData;
+	public  TextMeshProUGUI		goldText;
+	public TextMeshProUGUI		remainingEnemiesText;
+	public  List<GameObject>	enemies        = new List<GameObject>();
+	public  List<GameObject>	active_enemies = new List<GameObject>();
+	public  GameObject			enemyPrefab;
+	public  GameObject			_base;
+	private int					_highscore;
+	public  List<Vector3>		towersPositions;
 
 	void Awake()
 	{
@@ -40,6 +41,7 @@ public class Gamemanager : MonoBehaviour
 
 	public void addGold(int amount)
 	{
+		remainingEnemiesText.text = "Remaining Enemies: " + Gamemanager.Instance.active_enemies.Count.ToString();
 		gameData.gold += amount;
 		updateGoldText();
 		updateBottonStates();
