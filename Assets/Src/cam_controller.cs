@@ -36,6 +36,7 @@ public class cam_controller : MonoBehaviour
 			_cam.transform.position += direction;
 		}
 		
+		
 		// ich lass das mal drinne ... 
 		// brauchen wir evtl. doch noch, wenn es auf mehreren platformen laufen soll und man auf dem pc dann den luxus haben soll das auch über tastatur zu steuern ...
 		// var pos = transform.position;
