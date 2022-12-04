@@ -2111,7 +2111,7 @@ PrefabInstance:
     - target: {fileID: 5242412078426136445, guid: b4fe4c688d0b4cd4f943c298cc508f73, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 86915a9e57199c74bb925bc0b82750e3, type: 2}
+      objectReference: {fileID: 2100000, guid: 4d13369c3a7e21343b26abb689a3e8b0, type: 2}
     - target: {fileID: 6034883366923353768, guid: b4fe4c688d0b4cd4f943c298cc508f73, type: 3}
       propertyPath: m_Name
       value: HeadQuarter
@@ -2226,7 +2226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7255430149370141811, guid: b4fe4c688d0b4cd4f943c298cc508f73, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 8.3
+      value: 15.51
       objectReference: {fileID: 0}
     - target: {fileID: 7255430149370141811, guid: b4fe4c688d0b4cd4f943c298cc508f73, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -2236,5 +2236,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.02
       objectReference: {fileID: 0}
+    - target: {fileID: 8008593431563496375, guid: b4fe4c688d0b4cd4f943c298cc508f73, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2432090755550338912, guid: 8f8af4a6f37385743902bf38d1164d0c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4fe4c688d0b4cd4f943c298cc508f73, type: 3}
