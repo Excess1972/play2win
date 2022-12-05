@@ -3,34 +3,51 @@ using UnityEngine;
 public class build_tower_bp : MonoBehaviour
 {
 	private RaycastHit _hit;
+	private Camera     _camera;
 	private Vector3    _mousePoint;
-	public  GameObject prefab;
 	public  LayerMask  mask;
+	
+	// the preview of the tower
+	public  GameObject prefab;
+	
+	// to set the color of the preview
+	private Material   _material;
 
-	private Transform[] entItemsTransforms;
+	// need to check the min builddistance
+	private Transform[] objectsInSceneTransforms;
 
 	private void Start()
 	{
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		_camera = Camera.main;
+		Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
 		if (Physics.Raycast(ray, out _hit, Mathf.Infinity, mask))
 		{
 			transform.position = _hit.point;
 		}
 
-		entItemsTransforms = GameObject.Find("environment_items").GetComponentsInChildren<Transform>();
+		objectsInSceneTransforms = GameObject.Find("environment_items").GetComponentsInChildren<Transform>();
 	}
 
+	/**
+	 * mousemove updates the position of the preview
+	 * if position is in valid buildposition the preview is green otherwise it will display in red
+	 * rightclick abourts the positioning
+	 *
+	 * leftclick set builds the tower
+	 */
 	private void Update()
 	{
+		// right click to abort
 		if (Input.GetMouseButton(1))
 		{
 			Destroy(gameObject);
+			return;
 		}
 
-		gameObject.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.green);
+		setColor(Color.green);
 
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		var ray = _camera.ScreenPointToRay(Input.mousePosition);
 
 		if (Physics.Raycast(ray, out _hit, Mathf.Infinity, mask))
 		{
@@ -41,15 +58,15 @@ public class build_tower_bp : MonoBehaviour
 
 		if (distToBase < 6f)
 		{
-			gameObject.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.red);
+			setColor(Color.red);
 			return;
 		}
 
-		foreach (Transform envTransform in entItemsTransforms)
+		foreach (Transform envTransform in objectsInSceneTransforms)
 		{
 			if (Vector3.Distance(transform.position, envTransform.position) < 2.5f)
 			{
-				gameObject.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.red);
+				setColor(Color.red);
 				return;
 			}
 		}
@@ -58,7 +75,7 @@ public class build_tower_bp : MonoBehaviour
 		{
 			if (Vector3.Distance(transform.position, pos) < 2.5f)
 			{
-				gameObject.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.red);
+				setColor(Color.red);
 				return;
 			}
 		}
@@ -70,5 +87,15 @@ public class build_tower_bp : MonoBehaviour
 			Gamemanager.Instance.towersPositions.Add(ret.transform.position);
 			Destroy(gameObject);
 		}
+	}
+
+	private void setColor(Color color)
+	{
+		if (_material == null)
+		{
+			_material = gameObject.GetComponentInChildren<Renderer>().material;
+		}
+
+		_material.SetColor("_Color", color);
 	}
 }
