@@ -7,6 +7,5 @@ public class instant_tower_1_bp : MonoBehaviour
     public void spawn_tower_01_bp()
     {
         Instantiate(tower_01_bp);
-        
     }
 }
