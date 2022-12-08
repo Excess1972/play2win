@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class build_tower_bp : MonoBehaviour
+public class TowerConstructor : MonoBehaviour
 {
 	private RaycastHit _hit;
 	private Camera     _camera;
