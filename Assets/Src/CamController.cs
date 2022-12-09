@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class cam_controller : MonoBehaviour
+public class CamController : MonoBehaviour
 {
 	private Camera  _cam;
 	private float   _speed = 20;
@@ -9,7 +9,7 @@ public class cam_controller : MonoBehaviour
 	private void Awake()
 	{
 		_cam = Camera.main;
-		_cam.fieldOfView = 40;
+		// _cam.fieldOfView = 40;
 	}
 
 	void Update()
@@ -30,13 +30,14 @@ public class cam_controller : MonoBehaviour
 		{
 			touchStart = GetWorldPosition(0);
 		}
-		
-		if (Input.GetMouseButton(0)){
+
+		if (Input.GetMouseButton(0))
+		{
 			Vector3 direction = touchStart - GetWorldPosition(0);
 			_cam.transform.position += direction;
 		}
-		
-		
+
+
 		// ich lass das mal drinne ... 
 		// brauchen wir evtl. doch noch, wenn es auf mehreren platformen laufen soll und man auf dem pc dann den luxus haben soll das auch über tastatur zu steuern ...
 		// var pos = transform.position;
@@ -64,10 +65,11 @@ public class cam_controller : MonoBehaviour
 		//
 		// transform.position = pos;
 	}
-	
-	private Vector3 GetWorldPosition(float z){
+
+	private Vector3 GetWorldPosition(float z)
+	{
 		Ray   mousePos = _cam.ScreenPointToRay(Input.mousePosition);
-		Plane ground   = new Plane(Vector3.down, new Vector3(0,0,z));
+		Plane ground   = new Plane(Vector3.down, new Vector3(0, 0, z));
 		float distance;
 		ground.Raycast(mousePos, out distance);
 		return mousePos.GetPoint(distance);

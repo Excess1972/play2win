@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class tower_controller : MonoBehaviour
+public class TowerController : MonoBehaviour
 {
 	public List<GameObject> enemies_in_range = new List<GameObject>();
 
