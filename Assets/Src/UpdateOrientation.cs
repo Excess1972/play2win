@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class update_orientation : MonoBehaviour
+public class UpdateOrientation : MonoBehaviour
 {
     private Camera _cam;
     // Start is called before the first frame update

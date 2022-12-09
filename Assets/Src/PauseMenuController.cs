@@ -2,7 +2,7 @@ using UnityEngine;
 //using UnityEditor;
 using UnityEngine.SceneManagement;
 
-public class pause_menu_controller : MonoBehaviour
+public class PauseMenuController : MonoBehaviour
 {
     public GameObject PauseMenu;
     public GameObject EndScreen;

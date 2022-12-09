@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class spawner_visualization : MonoBehaviour
+public class SpawnerVisualization : MonoBehaviour
 {
     public float _size = 10;
 

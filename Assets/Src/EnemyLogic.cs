@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class enemy_logic : MonoBehaviour
+public class EnemyLogic : MonoBehaviour
 {
 	public  Animator		_animator;
 	private NavMeshAgent	_agent;
@@ -57,7 +57,7 @@ public class enemy_logic : MonoBehaviour
 	{
 		if (other.gameObject == Gamemanager.Instance._base)
 		{
-			other.gameObject.GetComponent<base_controller>().DamageRecieved(gameData.EnemyDmg);
+			other.gameObject.GetComponent<BaseController>().DamageRecieved(gameData.EnemyDmg);
 			Die();
 		}
 	}

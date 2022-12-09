@@ -6,16 +6,16 @@ public class TowerConstructor : MonoBehaviour
 	private Camera     _camera;
 	private Vector3    _mousePoint;
 	public  LayerMask  mask;
-	
+
 	// the preview of the tower
-	public  GameObject prefab;
-	
+	public GameObject prefab;
+
 	// to set the color of the preview
-	private Material   _material;
+	private Material _material;
 
 	// need to check the min builddistance
 	private Transform[] objectsInSceneTransforms;
-
+	
 	private void Start()
 	{
 		_camera = Camera.main;
@@ -52,6 +52,13 @@ public class TowerConstructor : MonoBehaviour
 		if (Physics.Raycast(ray, out _hit, Mathf.Infinity, mask))
 		{
 			transform.position = _hit.point;
+			// var mySphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+			
+			// mySphere.transform.localScale = new Vector3(3, 3, 3);
+			// mySphere.transform.position = new Vector3(
+			// 	_hit.point.x,
+			// 	_hit.point.y,
+			// 	_hit.point.z);
 		}
 
 		float distToBase = Vector3.Distance(transform.position, Gamemanager.Instance._base.transform.position);

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class cam_controller : MonoBehaviour
+public class CamController : MonoBehaviour
 {
 	private Camera  _cam;
 	private float   _speed = 20;

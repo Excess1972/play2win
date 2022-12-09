@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class tower_controller : MonoBehaviour
+public class TowerController : MonoBehaviour
 {
 	public List<GameObject> enemies_in_range = new List<GameObject>();
 
@@ -33,9 +33,9 @@ public class tower_controller : MonoBehaviour
 			if (Time.time > _shootingcooldown)
 			{
 				// shootinganimation.Play();
-				audiosource.PlayOneShot(audioclip);
+				// audiosource.PlayOneShot(audioclip);
 				_shootingcooldown = Time.time + _attackspeed;
-				if (_currenttarget.GetComponent<enemy_logic>().Hit(Gamemanager.Instance.gameData.TowerDmg))
+				if (_currenttarget.GetComponent<EnemyLogic>().Hit(Gamemanager.Instance.gameData.TowerDmg))
 				{
 					//InvalidateTarget(_currenttarget, true);
 					Gamemanager.Instance.addGold(Gamemanager.Instance.gameData.GoldEarned);

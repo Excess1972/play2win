@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class base_controller : MonoBehaviour
+public class BaseController : MonoBehaviour
 {
 	public  GameData		gameData;
 	private RectTransform	_healthBar;
