@@ -27,7 +27,7 @@ public class TowerConstructor : MonoBehaviour
 
 		if (Physics.Raycast(ray, out _hit, Mathf.Infinity, mask))
 		{
-			transform.position = new Vector3(_hit.point.x, _hit.point.y, _hit.point.z);
+			transform.position = new Vector3(_hit.point.x, _hit.point.y, _hit.point.z + 5);
 		}
 
 		objectsInSceneTransforms = GameObject.Find("environment_items").GetComponentsInChildren<Transform>();
@@ -35,7 +35,11 @@ public class TowerConstructor : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		Gamemanager.Instance.TowerDrag = true;
+		if (!Gamemanager.Instance.TowerDrag)
+		{
+			Gamemanager.Instance.TowerDrag = true;
+			OnMouseDrag();
+		}
 	}
 
 	/**
@@ -92,15 +96,15 @@ public class TowerConstructor : MonoBehaviour
 
 	private void OnMouseUp()
 	{
+		Gamemanager.Instance.TowerDrag = false;
+		
 		if (_validBuildPosition)
 		{
 			Gamemanager.Instance.spendGold(100);
 			GameObject ret = Instantiate(prefab, transform.position, transform.rotation);
 			Gamemanager.Instance.towersPositions.Add(ret.transform.position);
-			Destroy(gameObject);
 		}
 
-		Gamemanager.Instance.TowerDrag = false;
 		Destroy(gameObject);
 	}
 
@@ -108,7 +112,12 @@ public class TowerConstructor : MonoBehaviour
 	{
 		if (_material == null)
 		{
-			_material = gameObject.GetComponentInChildren<Renderer>().material;
+			var attackShpere = GameObject.FindWithTag("attackArea");
+
+			if (attackShpere)
+			{
+				_material = attackShpere.GetComponentInChildren<Renderer>().material;
+			}
 		}
 
 		_material.SetColor("_Color", color);
