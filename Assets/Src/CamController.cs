@@ -26,6 +26,11 @@ public class CamController : MonoBehaviour
 		// 	return;
 		// }
 
+		if (Gamemanager.Instance.TowerDrag)
+		{
+			return;
+		}
+
 		if (Input.GetMouseButtonDown(0))
 		{
 			touchStart = GetWorldPosition(0);
@@ -36,34 +41,6 @@ public class CamController : MonoBehaviour
 			Vector3 direction = touchStart - GetWorldPosition(0);
 			_cam.transform.position += direction;
 		}
-
-
-		// ich lass das mal drinne ... 
-		// brauchen wir evtl. doch noch, wenn es auf mehreren platformen laufen soll und man auf dem pc dann den luxus haben soll das auch über tastatur zu steuern ...
-		// var pos = transform.position;
-		//
-		// // up
-		// if (Input.GetKey("w"))
-		// {
-		// 	pos.z += _speed * Time.deltaTime;
-		// }
-		//
-		// // down
-		// if (Input.GetKey("s"))
-		// 	pos.z -= _speed * Time.deltaTime;
-		//
-		// // left
-		// if (Input.GetKey("a"))
-		// 	pos.x -= _speed * Time.deltaTime;
-		//
-		// // right
-		// if (Input.GetKey("d"))
-		// 	pos.x += _speed * Time.deltaTime;
-		//
-		// pos.x = Mathf.Clamp(pos.x, -40, 40);
-		// pos.z = Mathf.Clamp(pos.z, -60, 10);
-		//
-		// transform.position = pos;
 	}
 
 	private Vector3 GetWorldPosition(float z)

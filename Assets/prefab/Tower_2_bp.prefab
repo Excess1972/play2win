@@ -93,7 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6896145934454935399}
   - component: {fileID: 4602667279199349533}
-  m_Layer: 10
+  - component: {fileID: 8724032917759623856}
+  m_Layer: 0
   m_Name: Tower_2_bp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,6 +134,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   prefab: {fileID: 1356638714320740223, guid: d0082f298eae95143980ea8abc4aa142, type: 3}
+--- !u!136 &8724032917759623856
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6899108092894762131}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 4.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7101233566270180704
 PrefabInstance:
   m_ObjectHideFlags: 0
