@@ -31,32 +31,32 @@ public class WaveSpawner : MonoBehaviour
 
         if (Gamemanager.Instance.active_enemies.Count == 0)
         {
-            print("current wave: " + _wave + "spawning mobs: " + Mathf.Ceil(5f + Mathf.Pow(1.19f, _wave)));
+            // print("current wave: " + _wave + "spawning mobs: " + Mathf.Ceil(5f + Mathf.Pow(1.19f, _wave)));
             
             if(_wave == 5)
             {
                 Gamemanager.Instance.gameData.EnemyStartHealth = 200;
                 Gamemanager.Instance.gameData.EnemyDmg = 12;
-                print("wave 5, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
+                // print("wave 5, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
             }
             if (_wave == 10)
             {
                 Gamemanager.Instance.gameData.EnemyStartHealth = 250;
                 Gamemanager.Instance.gameData.EnemyDmg = 15;
-                print("wave 10, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
+                // print("wave 10, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
             }
             if (_wave == 15)
             {
                 Gamemanager.Instance.gameData.EnemyStartHealth = 300;
                 Gamemanager.Instance.gameData.EnemyDmg = 19;
-                print("wave 15, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
+                // print("wave 15, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
             }
             if (_wave == 20)
             {
                 Gamemanager.Instance.gameData.EnemyStartHealth = 400;
                 Gamemanager.Instance.gameData.GoldEarned = 8;
                 Gamemanager.Instance.gameData.EnemyDmg = 25;
-                print("wave 20, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
+                // print("wave 20, hat geklappt, leben ist jetzt: " + Gamemanager.Instance.gameData.EnemyStartHealth);
             }
 
             SpawnEnemyWave(Mathf.Ceil(5f + Mathf.Pow(1.19f, _wave)));
