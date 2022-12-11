@@ -21,7 +21,6 @@ public class TowerConstructor : MonoBehaviour
 
 	private void Start()
 	{
-		Gamemanager.Instance.TowerDrag = false;
 		_camera = Camera.main;
 		Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
@@ -30,16 +29,9 @@ public class TowerConstructor : MonoBehaviour
 			transform.position = new Vector3(_hit.point.x, _hit.point.y, _hit.point.z + 5);
 		}
 
+		// TODO : must be in the glabel scope ... not for EACH tower !!!
 		objectsInSceneTransforms = GameObject.Find("environment_items").GetComponentsInChildren<Transform>();
-	}
-
-	private void OnMouseDown()
-	{
-		if (!Gamemanager.Instance.TowerDrag)
-		{
-			Gamemanager.Instance.TowerDrag = true;
-			OnMouseDrag();
-		}
+		Gamemanager.Instance.TowerDrag = true;
 	}
 
 	/**
@@ -50,6 +42,7 @@ public class TowerConstructor : MonoBehaviour
 	 */
 	private void OnMouseDrag()
 	{
+		print("drag tower bp");
 		if (!Gamemanager.Instance.TowerDrag)
 		{
 			return;
@@ -100,7 +93,7 @@ public class TowerConstructor : MonoBehaviour
 		
 		if (_validBuildPosition)
 		{
-			Gamemanager.Instance.spendGold(100);
+			// Gamemanager.Instance.spendGold(100);
 			GameObject ret = Instantiate(prefab, transform.position, transform.rotation);
 			Gamemanager.Instance.towersPositions.Add(ret.transform.position);
 		}
