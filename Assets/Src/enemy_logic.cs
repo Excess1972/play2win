@@ -48,7 +48,7 @@ public class enemy_logic : MonoBehaviour
 		if(Gamemanager.Instance.active_enemies.Count == 0)
         {
 			Gamemanager.Instance.AddHighscore();
-			print("completed waves:" + Gamemanager.Instance.GetHighscore());
+			// print("completed waves:" + Gamemanager.Instance.GetHighscore());
         }
 	}
 

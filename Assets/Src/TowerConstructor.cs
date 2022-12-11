@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TowerConstructor : MonoBehaviour
@@ -5,15 +6,17 @@ public class TowerConstructor : MonoBehaviour
 	private RaycastHit _hit;
 	private Camera     _camera;
 	private Vector3    _mousePoint;
+	private bool       _validBuildPosition;
 	public  LayerMask  mask;
-	
+
 	// the preview of the tower
-	public  GameObject prefab;
-	
+	public GameObject prefab;
+
 	// to set the color of the preview
-	private Material   _material;
+	private Material _material;
 
 	// need to check the min builddistance
+	// TODO : must be in the glabel scope ... not for EACH tower !!!
 	private Transform[] objectsInSceneTransforms;
 
 	private void Start()
@@ -23,29 +26,30 @@ public class TowerConstructor : MonoBehaviour
 
 		if (Physics.Raycast(ray, out _hit, Mathf.Infinity, mask))
 		{
-			transform.position = _hit.point;
+			transform.position = new Vector3(_hit.point.x, _hit.point.y, _hit.point.z + 5);
 		}
 
+		// TODO : must be in the glabel scope ... not for EACH tower !!!
 		objectsInSceneTransforms = GameObject.Find("environment_items").GetComponentsInChildren<Transform>();
+		Gamemanager.Instance.TowerDrag = true;
 	}
 
 	/**
 	 * mousemove updates the position of the preview
 	 * if position is in valid buildposition the preview is green otherwise it will display in red
-	 * rightclick abourts the positioning
+	 * mouse/touch UP abourts the positioning
 	 *
-	 * leftclick set builds the tower
 	 */
-	private void Update()
+	private void OnMouseDrag()
 	{
-		// right click to abort
-		if (Input.GetMouseButton(1))
+		print("drag tower bp");
+		if (!Gamemanager.Instance.TowerDrag)
 		{
-			Destroy(gameObject);
 			return;
 		}
 
 		setColor(Color.green);
+		_validBuildPosition = false;
 
 		var ray = _camera.ScreenPointToRay(Input.mousePosition);
 
@@ -80,20 +84,33 @@ public class TowerConstructor : MonoBehaviour
 			}
 		}
 
-		if (Input.GetMouseButton(0))
+		_validBuildPosition = true;
+	}
+
+	private void OnMouseUp()
+	{
+		Gamemanager.Instance.TowerDrag = false;
+		
+		if (_validBuildPosition)
 		{
-			Gamemanager.Instance.spendGold(100);
+			// Gamemanager.Instance.spendGold(100);
 			GameObject ret = Instantiate(prefab, transform.position, transform.rotation);
 			Gamemanager.Instance.towersPositions.Add(ret.transform.position);
-			Destroy(gameObject);
 		}
+
+		Destroy(gameObject);
 	}
 
 	private void setColor(Color color)
 	{
 		if (_material == null)
 		{
-			_material = gameObject.GetComponentInChildren<Renderer>().material;
+			var attackShpere = GameObject.FindWithTag("attackArea");
+
+			if (attackShpere)
+			{
+				_material = attackShpere.GetComponentInChildren<Renderer>().material;
+			}
 		}
 
 		_material.SetColor("_Color", color);

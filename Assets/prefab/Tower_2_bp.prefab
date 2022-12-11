@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2992638567883827754}
   - component: {fileID: 8950898251347821287}
   - component: {fileID: 3618152055888082550}
+  - component: {fileID: 3704806852485164080}
   m_Layer: 10
   m_Name: attackRange
-  m_TagString: Untagged
+  m_TagString: attackArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,6 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3704806852485164080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176912227456440496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e4e73e74d577ee4c86427bee206acf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6899108092894762131
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +106,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6896145934454935399}
   - component: {fileID: 4602667279199349533}
-  m_Layer: 10
+  - component: {fileID: 8724032917759623856}
+  m_Layer: 0
   m_Name: Tower_2_bp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,6 +147,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   prefab: {fileID: 1356638714320740223, guid: d0082f298eae95143980ea8abc4aa142, type: 3}
+--- !u!136 &8724032917759623856
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6899108092894762131}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 7
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7101233566270180704
 PrefabInstance:
   m_ObjectHideFlags: 0

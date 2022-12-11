@@ -2428,7 +2428,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8232688058011289291}
-        m_TargetAssemblyTypeName: instant_tower_1_bp, Assembly-CSharp
+        m_TargetAssemblyTypeName: TowerBluePrintFactory, Assembly-CSharp
         m_MethodName: spawn_tower_01_bp
         m_Mode: 1
         m_Arguments:
