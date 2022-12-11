@@ -6,6 +6,7 @@ TagManager:
   tags:
   - WireframeCam
   - attackArea
+  - tower
   layers:
   - Default
   - TransparentFX

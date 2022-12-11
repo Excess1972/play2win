@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 3310747401571915033}
   - component: {fileID: 4649015391479482565}
   - component: {fileID: 8090794485497160073}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tower_2
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,9 +214,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1358180294889456779}
     m_Modifications:
+    - target: {fileID: 1456528219999600, guid: c9b3e9b046c800644bfe8778bf861ad4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1859915266488674, guid: c9b3e9b046c800644bfe8778bf861ad4, type: 3}
       propertyPath: m_Name
       value: Lighten_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859915266488674, guid: c9b3e9b046c800644bfe8778bf861ad4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882254241769440, guid: c9b3e9b046c800644bfe8778bf861ad4, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4362363212267524, guid: c9b3e9b046c800644bfe8778bf861ad4, type: 3}
       propertyPath: m_RootOrder

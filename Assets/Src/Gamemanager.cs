@@ -95,4 +95,29 @@ public class Gamemanager : MonoBehaviour
 	{
 		return _highscore;
 	}
+
+	public void setDragTowerBPMode(bool flag)
+	{
+		if (flag)
+		{
+			// set .. will be checked in cam controller to avoid the movement of cam
+			TowerDrag = true;
+			setLayers("Ignore Raycast");
+		}
+		else
+		{
+			TowerDrag = false;
+			setLayers("Default");
+		}
+	}
+
+	private void setLayers(string layerName)
+	{
+		// disable all colliders while dragging the tower_bp
+		GameObject[] towers = GameObject.FindGameObjectsWithTag("tower");
+		foreach (GameObject wall in towers)
+		{
+			wall.layer = LayerMask.NameToLayer(layerName);
+		}
+	}
 }
