@@ -119,8 +119,11 @@ namespace Src.tower
 					_material = attackShpere.GetComponentInChildren<Renderer>().material;
 				}
 			}
-
-			_material.SetColor("_Color", color);
+			else
+			{
+				color.a = .26f;
+				_material.SetColor("_Color", color);
+			}
 		}
 	}
 }

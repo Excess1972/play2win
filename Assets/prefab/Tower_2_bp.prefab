@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2992638567883827754}
   - component: {fileID: 8950898251347821287}
   - component: {fileID: 3618152055888082550}
-  - component: {fileID: 3704806852485164080}
   m_Layer: 10
   m_Name: attackRange
   m_TagString: attackArea
@@ -62,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb0460a8112433f4895f1d077fa319ad, type: 2}
+  - {fileID: 2100000, guid: eb2e8bc2a394c87419b6ee7796681cc7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,18 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3704806852485164080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5176912227456440496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e4e73e74d577ee4c86427bee206acf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6899108092894762131
 GameObject:
   m_ObjectHideFlags: 0

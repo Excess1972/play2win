@@ -5,7 +5,6 @@ namespace Src.cam.main
 	public class Controller : MonoBehaviour
 	{
 		private Camera  _cam;
-		private float   _speed = 20;
 		private Vector3 touchStart;
 
 		private void Awake()
