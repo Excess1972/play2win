@@ -36,7 +36,9 @@ namespace Src.tower
 				if (Time.time > _shootingcooldown)
 				{
 					// shootinganimation.Play();
-					// audiosource.PlayOneShot(audioclip);
+					gameObject.GetComponentInChildren<Weapon>().MyAttack();
+					audiosource.PlayOneShot(audioclip);
+
 					_shootingcooldown = Time.time + _attackspeed;
 					if (_currenttarget.GetComponent<enemy.Controller>().Hit(Gamemanager.Instance.gameData.TowerDmg))
 					{
