@@ -1,21 +1,7 @@
 ﻿namespace Src.tower {
-
 	using UnityEngine;
-	using UnityEditor;
-	using System.Collections;
-
-
 	[RequireComponent(typeof(Rigidbody))]
 	public class Bullet : MonoBehaviour {
-
-
-
-		#region --- VAR ---
-
-
-		// Shot Cut
-
-
 
 		public Rigidbody Rig {
 			get {
@@ -61,22 +47,10 @@
 		// Setting
 		private const float BULLET_MAX_REBOUND_SPEED = 20f;
 
-
-		#endregion
-
-
-
-
-		#region --- MSG ---
-
-
-
 		void Start () {
 			// Size
 			SetSize(transform.localScale.x);
 		}
-
-
 
 		void OnEnable () {
 			// Self Kill
@@ -84,15 +58,9 @@
 			Invoke("DestoryBullet", LifeTime + 1f);
 		}
 
-
-
-
 		void OnCollisionEnter (Collision col) {
 			Colliding(col.transform);
 		}
-
-
-
 
 		void OnTriggerEnter (Collider c) {
 			if (EntityOnHit) {
@@ -101,16 +69,11 @@
 			Colliding(c.transform);
 		}
 
-
-
-
 		void Colliding (Transform tf) {
 
 			if (!Alive) {
 				return;
 			}
-
-
 
 			// Logic
 			Alive = false;
@@ -130,12 +93,7 @@
 			// System
 			CancelInvoke();
 			DestoryBullet();
-
-
-
 		}
-
-
 
 		private void DisableCollider () {
 			Alive = false;
@@ -143,7 +101,6 @@
 				Col.enabled = false;
 			}
 		}
-
 
 		public void DestoryBullet () {
 			Alive = false;
@@ -158,16 +115,6 @@
 			Destroy(gameObject, Particle ? Particle.main.duration + Particle.main.startLifetimeMultiplier : 0.1f);
 		}
 
-
-		#endregion
-
-
-
-
-		#region --- API ---
-
-
-
 		public void SetSize (float size) {
 
 			// Trail
@@ -178,15 +125,6 @@
 
 			// Rig
 			Rig.mass *= size;
-
 		}
-
-
-
-		#endregion
-
-
-
-
 	}
 }

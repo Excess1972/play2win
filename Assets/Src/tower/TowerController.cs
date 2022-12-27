@@ -5,7 +5,7 @@ using TMPro;
 
 namespace Src.tower
 {
-	public class Controller : MonoBehaviour
+	public class TowerController : MonoBehaviour
 	{
 		public List<GameObject> enemies_in_range = new List<GameObject>();
 
@@ -40,7 +40,7 @@ namespace Src.tower
 					audiosource.PlayOneShot(audioclip);
 
 					_shootingcooldown = Time.time + _attackspeed;
-					if (_currenttarget.GetComponent<enemy.Controller>().Hit(Gamemanager.Instance.gameData.TowerDmg))
+					if (_currenttarget.GetComponent<enemy.EnemyController>().Hit(Gamemanager.Instance.gameData.TowerDmg))
 					{
 						//InvalidateTarget(_currenttarget, true);
 						Gamemanager.Instance.addGold(Gamemanager.Instance.gameData.GoldEarned);

@@ -3,7 +3,7 @@ using TMPro;
 
 namespace Src.hq
 {
-	public class Controller : MonoBehaviour
+	public class HQController : MonoBehaviour
 	{
 		public  GameData        gameData;
 		private RectTransform   _healthBar;
