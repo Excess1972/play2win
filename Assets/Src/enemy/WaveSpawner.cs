@@ -100,7 +100,7 @@ namespace Src.enemy
 									.GetComponent<spawner_visualization>()._size / 2),
 								spawns[selected_spawn_point].transform.position.z + (spawns[selected_spawn_point]
 									.GetComponent<spawner_visualization>()._size / 2))));
-						enemy.GetComponent<enemy.Controller>().SetAgentDestination();
+						enemy.GetComponent<enemy.EnemyController>().SetAgentDestination();
 						break;
 					}
 				}

@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 namespace Src.enemy
 {
-	public class Controller : MonoBehaviour
+	public class EnemyController : MonoBehaviour
 	{
 		public  Animator      _animator;
 		private NavMeshAgent  _agent;
@@ -59,7 +59,7 @@ namespace Src.enemy
 		{
 			if (other.gameObject == Gamemanager.Instance._base)
 			{
-				other.gameObject.GetComponent<Src.hq.Controller>().DamageRecieved(gameData.EnemyDmg);
+				other.gameObject.GetComponent<Src.hq.HQController>().DamageRecieved(gameData.EnemyDmg);
 				Die();
 			}
 		}

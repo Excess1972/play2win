@@ -133,7 +133,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 512
-  prefab: {fileID: 1356638714320740223, guid: eacb5cc0b441d7743aaf24496f754db0, type: 3}
+  prefab: {fileID: 1859915266488674, guid: 836fc2c7cd8810a4589db5304c67c9ee, type: 3}
 --- !u!136 &6332090372801876532
 CapsuleCollider:
   m_ObjectHideFlags: 0
